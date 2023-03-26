@@ -1,4 +1,4 @@
-import countryListTpl from '../src/templates/countryListTemplate.hbs'
+// import countryListTpl from '../src/templates/countryListTemplate.hbs'
 import notiflix from 'notiflix';
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './fetchCountries';
