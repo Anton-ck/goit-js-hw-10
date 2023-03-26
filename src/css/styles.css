@@ -18,3 +18,38 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+p {
+  width: 150px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.1rem;
+}
+
+img {
+  display: block;
+  min-width: 100px;
+  min-height: 50px;
+
+}
+
+.country-info > ul {
+  display: block;
+  margin: 0 30px;
+  padding: 0;
+}
+
+.country-content {
+  margin: 0 30px;
+}
+
+.country-content-item {
+  padding: 10px 0;
+}
