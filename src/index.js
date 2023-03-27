@@ -31,15 +31,16 @@ const onSearch = e => {
             console.log(result);
         })
         .catch(error => {
-            notiflix.Notify.failure('Oops, there is no country with that name.');
-        }).finally((result) => { 
-            setTimeout(() => { 
-                 userFormSearch.value = '';
-            },4000)
-           
-        });
+            if (error.message === '404') {
+                notiflix.Notify.warning('Oops, there is no country with that name.');
 
-};
+            } else {
+                notiflix.Report.failure(
+                    `${error.message}`, 
+                    'We don`t know what happened :(' ,
+                    'Ok',
+                        );
+ } });};
 
 
 userFormSearch.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));

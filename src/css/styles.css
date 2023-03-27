@@ -24,11 +24,12 @@ ul {
   margin: 10px 30px;
   list-style: none;
   display: flex;
-  justify-content: space-around;
   gap: 30px;
+  padding: 0;
 }
 
 p {
+  text-align: center;
   width: 150px;
   font-weight: 600;
   font-size: 18px;
@@ -39,7 +40,11 @@ img {
   display: block;
   min-width: 100px;
   min-height: 50px;
+  margin-left: 1.5rem;
+}
 
+.country-list__item > img {
+  margin: 0 auto;
 }
 
 .country-info > ul {
