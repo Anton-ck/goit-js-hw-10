@@ -11,11 +11,15 @@ const userFormSearch = document.querySelector('#search-box');
 const countryListEl = document.querySelector('.country-list');
 const countryInfoEl = document.querySelector('.country-info');
 
+const clearPage = () => { 
+      countryInfoEl.innerHTML = '';
+      countryListEl.innerHTML = '';
+}
+
 const onSearch = e => {
     const searchQuery = e.target.value.trim();
       if (!searchQuery) {
-        countryInfoEl.innerHTML = '';
-        countryListEl.innerHTML = '';
+      clearPage();
         return;
     }
 
@@ -25,6 +29,7 @@ const onSearch = e => {
                 notiflix.Notify.info(
                     'Too many matches found. Please enter a more specific name.'
                 );
+                  clearPage();
                 return 
             }
             showFoundCountries(result);
@@ -33,7 +38,8 @@ const onSearch = e => {
         .catch(error => {
             if (error.message === '404') {
                 notiflix.Notify.warning('Oops, there is no country with that name.');
-
+              clearPage();
+              return;
             } else {
                 notiflix.Report.failure(
                     `${error.message}`, 
@@ -48,12 +54,14 @@ userFormSearch.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 const showFoundCountries = (result) => {
   if (result.length >= 2 && result.length <= 10) {
-    countryInfoEl.innerHTML = '';
-      createCountryList(result);
+    clearPage();
+    createCountryList(result);
 
   }
   if (result.length === 1) {
-    countryListEl.innerHTML = '';
+    clearPage();
+      notiflix.Notify.success(`Yep Yep, we found target country`);
+
     createCountryCard(result);
   }
 }
