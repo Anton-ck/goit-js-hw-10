@@ -69,7 +69,7 @@ const showFoundCountries = (result) => {
 const createCountryList = (result) => {
   const countryList = result
     .map(({ name, flags }) => {
-      return `<li class="country-list__item"><img src="${flags.svg}" alt="${name.common}" width="110" height="60">
+      return `<li class="country-list__item"><img src="${flags.svg}" alt="${name.common}" width="100" height="50">
   <p> ${name.official}</p></li>`;
     })
     .join('');
