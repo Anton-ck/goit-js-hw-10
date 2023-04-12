@@ -5,7 +5,7 @@ import { fetchCountries } from './fetchCountries';
 import './css/styles.css';
 
 
-const DEBOUNCE_DELAY = 300;
+const DEBOUNCE_DELAY = 350;
 
 const userFormSearch = document.querySelector('#search-box');
 const countryListEl = document.querySelector('.country-list');
