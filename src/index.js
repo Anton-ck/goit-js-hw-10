@@ -24,7 +24,7 @@ const onSearch = e => {
     }
 
     fetchCountries(searchQuery)
-        .then(result => {
+      .then(result => {
             if (result.length > 10) {
                 notiflix.Notify.info(
                     'Too many matches found. Please enter a more specific name.'
